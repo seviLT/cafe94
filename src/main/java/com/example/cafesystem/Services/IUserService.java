@@ -1,9 +1,9 @@
 package com.example.cafesystem.Services;
 
-public interface IUserService {
-    public boolean customerLogin(String email, String password);
-    public boolean adminLogin(String email, String password);
-    public boolean create(String fName, String lName, String email);
-    public boolean deleteCustomer(String email);
-    public boolean deleteStaff(String email);
+public abstract class IUserService {
+    public abstract boolean customerLogin(String email, String password);
+    public abstract boolean adminLogin(String email, String password);
+    public abstract boolean create(String fName, String lName, String email);
+    public abstract boolean deleteCustomer(String email);
+    public abstract boolean deleteStaff(String email);
 }

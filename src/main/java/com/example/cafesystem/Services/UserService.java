@@ -4,7 +4,7 @@ import com.example.cafesystem.Customer;
 import com.example.cafesystem.Repository.ICustomerRepository;
 import com.example.cafesystem.Repository.IStaffRepository;
 
-public class UserService implements IUserService {
+public class UserService extends IUserService {
     private ICustomerRepository _customerRepository;
     private IStaffRepository _staffRepository;
     public UserService(ICustomerRepository customerRepository,
