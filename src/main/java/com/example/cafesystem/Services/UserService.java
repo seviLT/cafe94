@@ -29,7 +29,7 @@ public class UserService implements IUserService {
 
     @Override
     public boolean create(String fName, String lName, String email) {
-        return false;
+        return true;
     }
 
     @Override

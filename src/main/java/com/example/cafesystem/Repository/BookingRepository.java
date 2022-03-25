@@ -6,7 +6,7 @@ import com.example.cafesystem.ViewModels.UpdateCreateBooking;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class BookingRepository implements IBookingRepository{
+public class BookingRepository extends IBookingRepository{
     @Override
     public UUID createBooking(CreateBooking booking) {
         ArrayList<Booking> all = MockData.getBookings();

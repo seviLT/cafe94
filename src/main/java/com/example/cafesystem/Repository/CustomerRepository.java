@@ -9,7 +9,7 @@ import com.example.cafesystem.ViewModels.UpdateCustomerViewModel;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class CustomerRepository implements ICustomerRepository{
+public class CustomerRepository extends ICustomerRepository{
     @Override
     public UUID createCustomer(CustomerViewModel customer) {
         ArrayList<Customer> all = MockData.getCustomers();

@@ -8,7 +8,7 @@ import com.example.cafesystem.ViewModels.UpdateStaffViewModel;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class StaffRepository implements IStaffRepository{
+public class StaffRepository extends IStaffRepository{
     @Override
     public UUID createStaff(StaffViewModel staff) {
         ArrayList<Staff> all = MockData.getStaff();

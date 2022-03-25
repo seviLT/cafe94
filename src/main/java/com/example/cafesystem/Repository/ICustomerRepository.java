@@ -6,10 +6,10 @@ import com.example.cafesystem.ViewModels.UpdateCustomerViewModel;
 
 import java.util.UUID;
 
-public interface ICustomerRepository {
-    public UUID createCustomer(CustomerViewModel customer);
-    public void updateCustomer(UUID customerId, UpdateCustomerViewModel customer);
-    public void deleteCustomer(UUID customerId);
-    public Customer getCustomerId(UUID customerId);
-    public Customer getCustomerByEmailPassword(String email, String password);
+public abstract class ICustomerRepository {
+    public abstract UUID createCustomer(CustomerViewModel customer);
+    public abstract void updateCustomer(UUID customerId, UpdateCustomerViewModel customer);
+    public abstract void deleteCustomer(UUID customerId);
+    public abstract Customer getCustomerId(UUID customerId);
+    public abstract Customer getCustomerByEmailPassword(String email, String password);
 }
