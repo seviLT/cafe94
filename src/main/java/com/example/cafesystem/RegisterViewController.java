@@ -50,7 +50,7 @@ public class RegisterViewController {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration");
-        alert.setContentText("You registered successfully, now you can log in");
+        alert.setContentText("You have registered successfully, now you can log in");
 
         if(alert.showAndWait().get() == ButtonType.OK)
         {

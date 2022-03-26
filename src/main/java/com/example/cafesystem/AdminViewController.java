@@ -1,17 +1,24 @@
 package com.example.cafesystem;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AdminViewController {
+public class AdminViewController implements Initializable {
 
     @FXML
     Label AdminViewHelloLabel;
@@ -22,6 +29,27 @@ public class AdminViewController {
     private Scene scene;
 
     private Parent root;
+
+
+    @FXML
+    private Label chooseReportLabel;
+
+    @FXML
+    private Label chosenReport;
+
+    @FXML
+    private ListView<String> reportsListView;
+
+    @FXML
+    private ChoiceBox<String> StaffChoiceBox;
+    @FXML
+    private Label staffManagementLabel;
+
+    String [] reports = {"Most Popular Item","Most active customer","Number of active staff"};
+    String currentReport;
+
+    private String [] staffOptions = {"View Staff","Add","Remove"};
+
 
     public void displayName(String username) {
         AdminViewHelloLabel.setText("Hello " + username);
@@ -39,5 +67,44 @@ public class AdminViewController {
 
 
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        StaffChoiceBox.getItems().addAll(staffOptions);
+        reportsListView.getItems().addAll(reports);
+
+        reportsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+
+                //based on selection display report
+                currentReport = reportsListView.getSelectionModel().getSelectedItem();
+
+                chosenReport.setText(currentReport);
+            }
+        });
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
