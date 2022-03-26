@@ -50,4 +50,19 @@ public class WelcomeController {
 
 
     }
+
+    public void switchToRegister(ActionEvent event) throws IOException {
+
+
+        root = FXMLLoader.load(getClass().getResource("registerView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+
+
+    }
 }
