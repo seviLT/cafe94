@@ -50,6 +50,26 @@ public class CustomerViewController {
     }
 
 
+    public void switchToTakeAway (ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("orderView.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    public void switchToDelivery (ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("deliveryView.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
 
 
 }
