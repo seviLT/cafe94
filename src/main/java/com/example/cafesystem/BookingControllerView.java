@@ -11,10 +11,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CustomerViewController {
+public class BookingControllerView {
+
 
     @FXML
-    Label CustomerViewHelloLabel;
+
 
     private Stage stage;
 
@@ -22,12 +23,8 @@ public class CustomerViewController {
 
     private Parent root;
 
-    public void displayName(String username) {
-        CustomerViewHelloLabel.setText("Hello " + username);
-    }
 
-
-    public void logOut(ActionEvent event) throws IOException {
+    public void switchToWelcome(ActionEvent event) throws IOException {
 
 
         root = FXMLLoader.load(getClass().getResource("welcomeView.fxml"));
@@ -39,16 +36,17 @@ public class CustomerViewController {
 
     }
 
-    public void switchToBookingView (ActionEvent event) throws IOException {
+    public void switchToCustomerView(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("bookingView.fxml"));
+
+        root = FXMLLoader.load(getClass().getResource("CustomerView.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
-    }
 
+    }
 
 
 
