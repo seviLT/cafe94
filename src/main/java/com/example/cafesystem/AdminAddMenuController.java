@@ -45,7 +45,7 @@ public class AdminAddMenuController {
 
     public void addMenu(ActionEvent event) throws IOException {
 
-    
+
 
         //call create method
 

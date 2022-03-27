@@ -135,4 +135,16 @@ public class AdminViewController implements Initializable {
 
     }
 
+    public void switchToViewMenu(ActionEvent event) throws IOException {
+
+
+        root = FXMLLoader.load(getClass().getResource("AdminViewMenu.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
 }
