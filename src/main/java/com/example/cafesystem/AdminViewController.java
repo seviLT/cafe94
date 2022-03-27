@@ -12,11 +12,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class AdminViewController implements Initializable {
 
@@ -41,14 +43,19 @@ public class AdminViewController implements Initializable {
     private ListView<String> reportsListView;
 
     @FXML
+    private TextArea AdminViewTextArea;
+
+    @FXML
     private ChoiceBox<String> StaffChoiceBox;
     @FXML
     private Label staffManagementLabel;
 
-    String [] reports = {"Most Popular Item","Most active customer","Number of active staff"};
+    String[] reports = {"Most Popular Item", "Most active customer", "Number of active staff"};
     String currentReport;
 
-    private String [] staffOptions = {"View Staff","Add","Remove"};
+    private String[] staffOptions = {"View Staff", "Add", "Remove"};
+
+    private String[] dummy = {"dog", "dog", "cat", "lion"};
 
 
     public void displayName(String username) {
@@ -81,30 +88,23 @@ public class AdminViewController implements Initializable {
                 //based on selection display report
                 currentReport = reportsListView.getSelectionModel().getSelectedItem();
 
+                switch (currentReport) {
+                    case "Most Popular Item":
+                        AdminViewTextArea.setText(dummy[0]);
+                        break;
+                    case "Most active customer":
+                        AdminViewTextArea.setText(dummy[2]);
+
+
+                }
+
+
                 chosenReport.setText(currentReport);
             }
         });
 
 
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

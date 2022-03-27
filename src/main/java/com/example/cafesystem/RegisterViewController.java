@@ -34,9 +34,6 @@ public class RegisterViewController {
     private TextField RegisterViewPasswordText;
 
 
-
-
-
     public void register(ActionEvent event) throws IOException {
 
         String email = RegisterViewEmailText.getText();
@@ -47,13 +44,11 @@ public class RegisterViewController {
         //call create method
 
 
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration");
         alert.setContentText("You have registered successfully, now you can log in");
 
-        if(alert.showAndWait().get() == ButtonType.OK)
-        {
+        if (alert.showAndWait().get() == ButtonType.OK) {
             //back to welcome
             root = FXMLLoader.load(getClass().getResource("welcomeView.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -64,7 +59,6 @@ public class RegisterViewController {
 
 
     }
-
 
 
     public void switchToWelcome(ActionEvent event) throws IOException {

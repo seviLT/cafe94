@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 public class DeliveryController implements Initializable {
 
 
-
     @FXML
 
     private TextField addressText;
@@ -30,7 +29,7 @@ public class DeliveryController implements Initializable {
     @FXML
     private Label showOrderLabelDelivery;
 
-    String[] food = {"Big Mac","Stake","Chicken Fillet"};
+    String[] food = {"Big Mac", "Stake", "Chicken Fillet"};
 
     String currentFood;
 
@@ -41,7 +40,7 @@ public class DeliveryController implements Initializable {
 
     private Parent root;
 
-    public void switchToCustomerView (ActionEvent event) throws IOException {
+    public void switchToCustomerView(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("CustomerView.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -51,7 +50,7 @@ public class DeliveryController implements Initializable {
 
     }
 
-    public void switchToWelcome (ActionEvent event) throws IOException {
+    public void switchToWelcome(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("welcomeView.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -65,13 +64,11 @@ public class DeliveryController implements Initializable {
     public void makeOrderDelivery(ActionEvent event) throws IOException {
 
 
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("TakeAway Order");
         alert.setContentText("Your order will be delivered to " + addressText.getText());
 
-        if(alert.showAndWait().get() == ButtonType.OK)
-        {
+        if (alert.showAndWait().get() == ButtonType.OK) {
             //back to welcome
             root = FXMLLoader.load(getClass().getResource("customerView.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -90,9 +87,7 @@ public class DeliveryController implements Initializable {
         foodListViewDelivery.getItems().addAll(food);
 
 
-
         foodListViewDelivery.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
 
 
             @Override
@@ -100,19 +95,15 @@ public class DeliveryController implements Initializable {
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
 
 
-
                 currentFood = foodListViewDelivery.getSelectionModel().getSelectedItem();
-
 
 
                 showOrderLabelDelivery.setText("Current choice " + currentFood);
 
 
-
             }
 
         });
-
 
 
     }
