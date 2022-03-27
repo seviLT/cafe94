@@ -15,7 +15,7 @@
       <Button fx:id="backButton" layoutX="174.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToCustomerView" text="Back" />
       <Button fx:id="LogOutButton" layoutX="292.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToWelcome" text="Log Out" />
       <Button layoutX="201.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToBookingView" text="View your bookings" />
-      <Button layoutX="200.0" layoutY="168.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="New booking" />
+      <Button layoutX="200.0" layoutY="168.0" mnemonicParsing="false" onAction="#switchToNewBooking" prefHeight="26.0" prefWidth="121.0" text="New booking" />
       <Button layoutX="200.0" layoutY="212.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Cancel a booking" />
    </children>
 </AnchorPane>

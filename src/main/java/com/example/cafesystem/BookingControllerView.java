@@ -60,6 +60,18 @@ public class BookingControllerView {
 
     }
 
+    public void switchToNewBooking(ActionEvent event) throws IOException {
+
+
+        root = FXMLLoader.load(getClass().getResource("BookingNewBooking.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
 
 
 }
