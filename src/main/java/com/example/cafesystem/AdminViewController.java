@@ -42,10 +42,7 @@ public class AdminViewController implements Initializable {
     @FXML
     private TextField AdminViewTextField;
 
-    @FXML
-    private ChoiceBox<String> StaffChoiceBox;
-    @FXML
-    private Label staffManagementLabel;
+
 
     String[] reports = {"Most Popular Item", "Most active customer", "Number of active staff"};
     String currentReport;
@@ -114,7 +111,16 @@ public class AdminViewController implements Initializable {
 
     }
 
+    public void switchToViewStaff(ActionEvent event) throws IOException {
 
 
+        root = FXMLLoader.load(getClass().getResource("AdminStaffView.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
 
 }
