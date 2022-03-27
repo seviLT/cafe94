@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.BookingControllerView">
    <children>
       <Label fx:id="bookingViewHelloLabel" layoutX="244.0" layoutY="37.0" text="Hello ">
@@ -13,22 +12,10 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="198.0" layoutY="111.0" text="View your bookings">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="214.0" layoutY="165.0" text="Make new booking">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="207.0" layoutY="212.0" text="Cancel Booking">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="backButton" layoutX="172.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchToCustomerView" text="Back" />
-      <Button fx:id="LogOutButton" layoutX="290.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchToWelcome" text="Log Out" />
+      <Button fx:id="backButton" layoutX="174.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToCustomerView" text="Back" />
+      <Button fx:id="LogOutButton" layoutX="292.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToWelcome" text="Log Out" />
+      <Button layoutX="201.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToBookingView" text="View your bookings" />
+      <Button layoutX="200.0" layoutY="168.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="New booking" />
+      <Button layoutX="200.0" layoutY="212.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Cancel a booking" />
    </children>
 </AnchorPane>

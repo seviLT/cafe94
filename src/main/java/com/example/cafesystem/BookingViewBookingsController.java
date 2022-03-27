@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -15,9 +14,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AdminStaffController implements Initializable {
+public class BookingViewBookingsController implements Initializable {
 
     @FXML
+
     private Stage stage;
 
     private Scene scene;
@@ -25,12 +25,9 @@ public class AdminStaffController implements Initializable {
     private Parent root;
 
     @FXML
-    private Label AdminStaffViewLabel;
+    private ListView<String> BookingViewBookingsList;
 
-    @FXML
-    private ListView<String> AdminStaffViewList;
-
-    String []  staff = {"John","Joe","Dave","Rom"};
+    String []  booking = {"Monday","Tuesday","Sunday"};
 
     String currentStaff;
 
@@ -38,16 +35,15 @@ public class AdminStaffController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        AdminStaffViewList.getItems().addAll(staff);
+        BookingViewBookingsList.getItems().addAll(booking);
 
 
     }
 
+    public void switchToBookingView(ActionEvent event) throws IOException {
 
-    public void switchAdminView(ActionEvent event) throws IOException {
 
-
-        root = FXMLLoader.load(getClass().getResource("AdminView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("bookingView.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
