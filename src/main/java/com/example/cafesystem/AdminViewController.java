@@ -9,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -43,7 +40,7 @@ public class AdminViewController implements Initializable {
     private ListView<String> reportsListView;
 
     @FXML
-    private TextArea AdminViewTextArea;
+    private TextField AdminViewTextField;
 
     @FXML
     private ChoiceBox<String> StaffChoiceBox;
@@ -53,7 +50,6 @@ public class AdminViewController implements Initializable {
     String[] reports = {"Most Popular Item", "Most active customer", "Number of active staff"};
     String currentReport;
 
-    private String[] staffOptions = {"View Staff", "Add", "Remove"};
 
     private String[] dummy = {"dog", "dog", "cat", "lion"};
 
@@ -78,7 +74,7 @@ public class AdminViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        StaffChoiceBox.getItems().addAll(staffOptions);
+
         reportsListView.getItems().addAll(reports);
 
         reportsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
@@ -90,10 +86,10 @@ public class AdminViewController implements Initializable {
 
                 switch (currentReport) {
                     case "Most Popular Item":
-                        AdminViewTextArea.setText(dummy[0]);
+                        AdminViewTextField.setText(dummy[0]);
                         break;
                     case "Most active customer":
-                        AdminViewTextArea.setText(dummy[2]);
+                        AdminViewTextField.setText(dummy[2]);
 
 
                 }
@@ -105,6 +101,20 @@ public class AdminViewController implements Initializable {
 
 
     }
+
+    public void switchToAddStaff(ActionEvent event) throws IOException {
+
+
+        root = FXMLLoader.load(getClass().getResource("AdminAddStaffView.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
+
 
 
 }
